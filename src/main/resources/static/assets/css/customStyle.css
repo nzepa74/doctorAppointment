@@ -1,0 +1,34 @@
+
+.status-icon {
+    content: '';
+    width: 0.5rem !important;
+    height: 0.5rem !important;
+    display: inline-block;
+    background: currentColor;
+    border-radius: 50%;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+    margin-right: .375rem;
+    vertical-align: middle;
+}
+
+.bg-success {
+    background-color: #5eba00 !important;
+}
+
+.bg-danger {
+    background-color: #ff0000 !important;
+}
+
+.bg-yellow {
+    background-color: yellow !important;
+}
+
+.hidden {
+    display: none; !important;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+}

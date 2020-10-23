@@ -22,6 +22,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/customStyle.css">
     <link rel="stylesheet" href="../assets/datepicker/css/datepicker.css">
     <link rel="stylesheet" href="../assets/sweetalert/sweetalert2.css">
     <link rel="stylesheet" href="../assets/dataTable/css/buttons.dataTables.min.css">
@@ -343,12 +344,23 @@
                                                             </h4>
                                                             <p class="text-muted mb-0">Not Available</p>
 
-                                                            <div class="table-responsive">
-                                                                <table id="timeSlotTableId" class="table-bordered">
-                                                                    <tbody>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
+                                                            <!--                                                            <div class="table-responsive">-->
+                                                            <table id="timeSlotTableId" class="table-bordered">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="text-muted hidden">Id</th>
+                                                                    <th class="text-muted">Sl No.</th>
+                                                                    <th class="text-muted">Status</th>
+                                                                    <th class="text-muted">From</th>
+                                                                    <th class="text-muted">To</th>
+                                                                    <th class="text-muted">Date</th>
+                                                                    <th class="text-muted">Action</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                                            <!--                                                            </div>-->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -497,18 +509,22 @@
                         <div class="row form-row hours-cont">
                             <div class="col-12 col-md-10">
                                 <div class="row form-row">
-                                    <input type="hidden" name="scheduleDate" id="scheduleDate"
+                                    <input type="text" name="scheduleDate" id="scheduleDate"
                                            class="scheduleDate field"/>
+                                    <input type="text" name="scheduleDetailId" id="scheduleDetailId"
+                                           class="scheduleDetailId field"/>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>From</label>
-                                            <input type="text" name="availableFrom" class="form-control field"/>
+                                            <input type="text" name="availableFrom" id="availableFrom"
+                                                   class="form-control field"/>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label>To</label>
-                                            <input type="text" name="availableTo" class="form-control field"/>
+                                            <input type="text" name="availableTo" id="availableTo"
+                                                   class="form-control field"/>
                                         </div>
                                     </div>
                                 </div>
