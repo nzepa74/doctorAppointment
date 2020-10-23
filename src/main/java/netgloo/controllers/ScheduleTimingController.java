@@ -2,10 +2,7 @@ package netgloo.controllers;
 
 
 import netgloo.dto.ScheduleTimingDetailDto;
-import netgloo.dto.ScheduleTimingMasterDto;
-import netgloo.dto.UserDto;
 import netgloo.helper.ResponseMessage;
-import netgloo.models.User;
 import netgloo.service.ScheduleTimingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

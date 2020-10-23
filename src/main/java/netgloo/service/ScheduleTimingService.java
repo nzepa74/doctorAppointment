@@ -1,20 +1,15 @@
 package netgloo.service;
 
 import netgloo.dto.ScheduleTimingDetailDto;
-import netgloo.dto.ScheduleTimingMasterDto;
 import netgloo.helper.ResponseMessage;
 import netgloo.helper.SystemDataInt;
 import netgloo.models.ScheduleTimingDetail;
 import netgloo.models.ScheduleTimingMaster;
-import netgloo.models.User;
 import netgloo.repository.ScheduleTimingDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigInteger;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
