@@ -51,10 +51,10 @@ public class ScheduleTimingService {
         scheduleTimingDetail.setAvailableFrom(scheduleTimingDetailDto.getAvailableFrom());
         scheduleTimingDetail.setAvailableTo(scheduleTimingDetailDto.getAvailableTo());
         scheduleTimingDetail.setAppointmentStatus('A');
-//        scheduleTimingDetail.setCreatedBy("Doctor");
-//        scheduleTimingDetail.setCreatedDate(new Date());
-//        scheduleTimingDetail.setUpdatedBy("Doctor");
-//        scheduleTimingDetail.setUpdatedDate(new Date());
+        scheduleTimingDetail.setCreatedBy("Doctor");
+        scheduleTimingDetail.setCreatedDate(new Date());
+        scheduleTimingDetail.setUpdatedBy("Doctor");
+        scheduleTimingDetail.setUpdatedDate(new Date());
         scheduleTimingDetail.setScheduleDate(scheduleTimingDetailDto.getScheduleDate());
         return scheduleTimingDetail;
     }

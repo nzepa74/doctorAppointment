@@ -2,7 +2,6 @@ package netgloo.dto;
 
 
 import java.math.BigInteger;
-import java.util.Date;
 
 public class ScheduleTimingDetailDto {
     //region setters and getters
