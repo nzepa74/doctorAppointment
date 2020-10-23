@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/datepicker/css/datepicker.css">
     <link rel="stylesheet" href="../assets/sweetalert/sweetalert2.css">
+    <link rel="stylesheet" href="../assets/dataTable/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/dataTable/css/editor.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/dataTable/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../assets/dataTable/css/select.dataTables.min.css">
 
 
     <!-- jQuery -->
@@ -51,6 +55,7 @@
     <script src="../assets/datepicker/js/datepicker.min.js"></script>
     <script src="../assets/customLib/nprogress.js"></script>
     <script src="../assets/customLib/jquery.blockUI.js"></script>
+    <script src="../assets/dataTable/js/jquery.dataTables.min.js"></script>
 
 </head>
 <body>
@@ -337,6 +342,13 @@
                                                                         class="fa fa-plus-circle"></i> Add Slot</a>
                                                             </h4>
                                                             <p class="text-muted mb-0">Not Available</p>
+
+                                                            <div class="table-responsive">
+                                                                <table id="timeSlotTableId" class="table-bordered">
+                                                                    <tbody>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
