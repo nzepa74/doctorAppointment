@@ -95,12 +95,12 @@ user = (function () {
         });
     }
 
-
     $('#btnAddSlot').on('click', function () {
         let masterDate = $("#masterDate").val();
         $("#scheduleDate").val(masterDate);
         $(".modal-title").text(masterDate);
         $('#btnSave').text('Save');
+        $('.field').val('');
     });
 
     return {

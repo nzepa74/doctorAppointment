@@ -100,6 +100,7 @@ user = (function () {
         $("#scheduleDate").val(masterDate);
         $(".modal-title").text(masterDate);
         $('#btnSave').text('Save');
+        $('.field').val('');
     });
 
     return {
