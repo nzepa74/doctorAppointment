@@ -1,6 +1,5 @@
 package netgloo.dto;
 
-
 import java.math.BigInteger;
 
 public class ScheduleTimingDetailDto {
@@ -9,24 +8,9 @@ public class ScheduleTimingDetailDto {
     private String availableFrom;
     private String availableTo;
      private BigInteger scheduleDetailId;
+     private BigInteger scheduleMasterId;
     private Character appointmentStatus;
     //endregion
-
-    public BigInteger getScheduleDetailId() {
-        return scheduleDetailId;
-    }
-
-    public void setScheduleDetailId(BigInteger scheduleDetailId) {
-        this.scheduleDetailId = scheduleDetailId;
-    }
-
-    public Character getAppointmentStatus() {
-        return appointmentStatus;
-    }
-
-    public void setAppointmentStatus(Character appointmentStatus) {
-        this.appointmentStatus = appointmentStatus;
-    }
 
     public String getScheduleDate() {
         return scheduleDate;
@@ -50,5 +34,29 @@ public class ScheduleTimingDetailDto {
 
     public void setAvailableTo(String availableTo) {
         this.availableTo = availableTo;
+    }
+
+    public BigInteger getScheduleDetailId() {
+        return scheduleDetailId;
+    }
+
+    public void setScheduleDetailId(BigInteger scheduleDetailId) {
+        this.scheduleDetailId = scheduleDetailId;
+    }
+
+    public BigInteger getScheduleMasterId() {
+        return scheduleMasterId;
+    }
+
+    public void setScheduleMasterId(BigInteger scheduleMasterId) {
+        this.scheduleMasterId = scheduleMasterId;
+    }
+
+    public Character getAppointmentStatus() {
+        return appointmentStatus;
+    }
+
+    public void setAppointmentStatus(Character appointmentStatus) {
+        this.appointmentStatus = appointmentStatus;
     }
 }

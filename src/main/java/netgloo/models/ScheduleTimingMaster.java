@@ -2,6 +2,7 @@ package netgloo.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "schedule_master")
@@ -9,7 +10,7 @@ public class ScheduleTimingMaster {
     //region private variables
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long scheduleMasterId;
+    private BigInteger scheduleMasterId;
 
     @NotNull
     private String scheduleDate;
@@ -20,11 +21,12 @@ public class ScheduleTimingMaster {
 
     //region setters and getters
 
-    public long getScheduleMasterId() {
+
+    public BigInteger getScheduleMasterId() {
         return scheduleMasterId;
     }
 
-    public void setScheduleMasterId(long scheduleMasterId) {
+    public void setScheduleMasterId(BigInteger scheduleMasterId) {
         this.scheduleMasterId = scheduleMasterId;
     }
 

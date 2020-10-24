@@ -2,6 +2,7 @@ package netgloo.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigInteger;
 import java.util.Date;
 
 @Entity
@@ -10,10 +11,10 @@ public class ScheduleTimingDetail {
     //region private variables
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long scheduleDetailId;
+    private BigInteger scheduleDetailId;
 
     @NotNull
-    private long scheduleMasterId;
+    private BigInteger scheduleMasterId;
 
     @NotNull
     private String scheduleDate;
@@ -40,28 +41,28 @@ public class ScheduleTimingDetail {
 
     //region setters and getters
 
+    public BigInteger getScheduleDetailId() {
+        return scheduleDetailId;
+    }
+
+    public void setScheduleDetailId(BigInteger scheduleDetailId) {
+        this.scheduleDetailId = scheduleDetailId;
+    }
+
+    public BigInteger getScheduleMasterId() {
+        return scheduleMasterId;
+    }
+
+    public void setScheduleMasterId(BigInteger scheduleMasterId) {
+        this.scheduleMasterId = scheduleMasterId;
+    }
+
     public String getScheduleDate() {
         return scheduleDate;
     }
 
     public void setScheduleDate(String scheduleDate) {
         this.scheduleDate = scheduleDate;
-    }
-
-    public long getScheduleMasterId() {
-        return scheduleMasterId;
-    }
-
-    public void setScheduleMasterId(long scheduleMasterId) {
-        this.scheduleMasterId = scheduleMasterId;
-    }
-
-    public long getScheduleDetailId() {
-        return scheduleDetailId;
-    }
-
-    public void setScheduleDetailId(long scheduleDetailId) {
-        this.scheduleDetailId = scheduleDetailId;
     }
 
     public String getAvailableFrom() {

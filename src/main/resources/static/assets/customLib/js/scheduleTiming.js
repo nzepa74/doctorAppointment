@@ -17,6 +17,7 @@ user = (function () {
                 if (res.status === 1) {
                     let columnDef = [
                         {data: "scheduleDetailId", class: "scheduleDetailId hidden"},
+                        {data: "scheduleMasterId", class: "scheduleMasterId hidden"},
                         {
                             class: "align-middle", "mRender": function (data, type, row, meta) {
                                 return meta.row + 1;
@@ -63,10 +64,12 @@ user = (function () {
             let row = $(this).closest('tr');
             let selectedRow = row.addClass('selected');
             let scheduleDetailId = selectedRow.find('.scheduleDetailId').text();
+            let scheduleMasterId = selectedRow.find('.scheduleMasterId').text();
             let availableFrom = selectedRow.find('.availableFrom').text();
             let availableTo = selectedRow.find('.availableTo').text();
             let scheduleDate = selectedRow.find('.scheduleDate').text();
             selectedRow.removeClass('selected');
+            $('#scheduleMasterId').val(scheduleMasterId);
             $('#scheduleDetailId').val(scheduleDetailId);
             $('#availableFrom').val(availableFrom);
             $('#availableTo').val(availableTo);

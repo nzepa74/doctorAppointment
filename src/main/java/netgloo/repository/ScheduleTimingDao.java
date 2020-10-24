@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.math.BigInteger;
 import java.util.List;
 
 @Repository
@@ -15,12 +16,12 @@ public class ScheduleTimingDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public long addScheduleMaster(ScheduleTimingMaster scheduleTimingMaster) {
+    public BigInteger addScheduleMaster(ScheduleTimingMaster scheduleTimingMaster) {
         return entityManager.merge(scheduleTimingMaster).getScheduleMasterId();
     }
 
     public void addScheduleDetail(ScheduleTimingDetail scheduleTimingDetail) {
-        entityManager.persist(scheduleTimingDetail);
+        entityManager.merge(scheduleTimingDetail);
     }
 
 
@@ -31,7 +32,7 @@ public class ScheduleTimingDao {
                 .getSingleResult();
      }
 
-    public List<ScheduleTimingDetail> getScheduleDetail(long scheduleMasterId) {
+    public List<ScheduleTimingDetail> getScheduleDetail(BigInteger scheduleMasterId) {
         return entityManager.createQuery("from ScheduleTimingDetail where scheduleMasterId =:scheduleMasterId").
                 setParameter("scheduleMasterId", scheduleMasterId)
                 .getResultList();
