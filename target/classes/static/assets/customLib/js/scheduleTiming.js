@@ -44,8 +44,8 @@ user = (function () {
                                     '<a class="btn btn-sm bg-success-light" id="btnEdit" data-toggle="modal" href="#add_time_slot">' +
                                     '<i class="fe fe-pencil"></i> Edit' +
                                     '</a>' +
-                                    '<a data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">' +
-                                    '<i class="fe fe-trash"></i> Delete' +
+                                    '<a data-toggle="modal" href="#delete_modal" id="btnDelete" class="btn btn-sm bg-danger-light">' +
+                                    '<i class="fa fa-trash-o"></i> Delete' +
                                     '</a>' +
                                     '</div>';
                             }
@@ -84,6 +84,27 @@ user = (function () {
             $('#scheduleDate').val(scheduleDate);
             $(".modal-title").text(scheduleDate);
             $('#btnSave').text('Update');
+        });
+    }
+
+    function btnDelete() {
+        $('#timeSlotTableId tbody').on('click', 'tr #btnDelete', function () {
+            let row = $(this).closest('tr');
+            let selectedRow = row.addClass('selected');
+            let scheduleDetailId = selectedRow.find('.scheduleDetailId').text();
+            selectedRow.removeClass('selected');
+            $.ajax({
+                url: "/scheduleTiming/deleteScheduleDetail",
+                type: "POST",
+                data: {scheduleDetailId: scheduleDetailId},
+                success: function (res) {
+                    if (res.status === 1) {
+                        getScheduleDetail();
+                    } else {
+                        alert(res.text);
+                    }
+                }
+            });
         });
     }
 
@@ -127,6 +148,7 @@ user = (function () {
         getCurrentDate: getCurrentDate,
         getScheduleDetail: getScheduleDetail,
         btnEdit: btnEdit,
+        btnDelete: btnDelete,
         addSchedule: addSchedule
     }
 })();
@@ -135,5 +157,6 @@ $(document).ready(function () {
     user.getCurrentDate();
     user.getScheduleDetail();
     user.btnEdit();
+    user.btnDelete();
     user.addSchedule();
 });

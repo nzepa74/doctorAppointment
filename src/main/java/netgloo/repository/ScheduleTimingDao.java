@@ -37,4 +37,11 @@ public class ScheduleTimingDao {
                 setParameter("scheduleMasterId", scheduleMasterId)
                 .getResultList();
     }
+
+    public void deleteScheduleDetail(ScheduleTimingDetail scheduleTimingDetail) {
+        if (entityManager.contains(scheduleTimingDetail))
+            entityManager.remove(scheduleTimingDetail);
+        else
+            entityManager.remove(entityManager.merge(scheduleTimingDetail));
+    }
 }

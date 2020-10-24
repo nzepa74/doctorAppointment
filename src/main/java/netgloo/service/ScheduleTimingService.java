@@ -5,6 +5,7 @@ import netgloo.helper.ResponseMessage;
 import netgloo.helper.SystemDataInt;
 import netgloo.models.ScheduleTimingDetail;
 import netgloo.models.ScheduleTimingMaster;
+import netgloo.models.User;
 import netgloo.repository.ScheduleTimingDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,15 @@ public class ScheduleTimingService {
             responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_UNSUCCESSFUL.value());
             responseMessage.setText("Failed to save due to " + ex.toString());
         }
+        return responseMessage;
+    }
+
+    public ResponseMessage deleteScheduleDetail(BigInteger scheduleDetailId) {
+        ResponseMessage responseMessage = new ResponseMessage();
+        ScheduleTimingDetail scheduleTimingDetail = new ScheduleTimingDetail();
+        scheduleTimingDetail.setScheduleDetailId(scheduleDetailId);
+        scheduleTimingDao.deleteScheduleDetail(scheduleTimingDetail);
+        responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());
         return responseMessage;
     }
 
