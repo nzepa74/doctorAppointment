@@ -90,6 +90,7 @@ user = (function () {
                     if (res.status === 1) {
                         $('#add_time_slot').modal('hide');
                         $(".field").val('');
+                        getScheduleDetail();
                     } else {
                         alert(res.text);
                     }
