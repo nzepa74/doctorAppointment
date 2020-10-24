@@ -13,6 +13,9 @@ public class ScheduleTimingDetail {
     private long scheduleDetailId;
 
     @NotNull
+    private long scheduleMasterId;
+
+    @NotNull
     private String scheduleDate;
 
     @NotNull
@@ -37,20 +40,28 @@ public class ScheduleTimingDetail {
 
     //region setters and getters
 
-    public long getScheduleDetailId() {
-        return scheduleDetailId;
-    }
-
-    public void setScheduleDetailId(long scheduleDetailId) {
-        this.scheduleDetailId = scheduleDetailId;
-    }
-
     public String getScheduleDate() {
         return scheduleDate;
     }
 
     public void setScheduleDate(String scheduleDate) {
         this.scheduleDate = scheduleDate;
+    }
+
+    public long getScheduleMasterId() {
+        return scheduleMasterId;
+    }
+
+    public void setScheduleMasterId(long scheduleMasterId) {
+        this.scheduleMasterId = scheduleMasterId;
+    }
+
+    public long getScheduleDetailId() {
+        return scheduleDetailId;
+    }
+
+    public void setScheduleDetailId(long scheduleDetailId) {
+        this.scheduleDetailId = scheduleDetailId;
     }
 
     public String getAvailableFrom() {

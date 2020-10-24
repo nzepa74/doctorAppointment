@@ -12,7 +12,7 @@ user = (function () {
         $.ajax({
             url: "/scheduleTiming/getScheduleDetail",
             type: "GET",
-            data: {scheduleDate: '23-Oct-2020'},
+            data: {scheduleDate: '24-Oct-2020'},
             success: function (res) {
                 if (res.status === 1) {
                     let columnDef = [

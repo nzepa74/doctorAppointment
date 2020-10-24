@@ -15,8 +15,8 @@ public class ScheduleTimingDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public void addScheduleMaster(ScheduleTimingMaster scheduleTimingMaster) {
-        entityManager.merge(scheduleTimingMaster);
+    public long addScheduleMaster(ScheduleTimingMaster scheduleTimingMaster) {
+        return entityManager.merge(scheduleTimingMaster).getScheduleMasterId();
     }
 
     public void addScheduleDetail(ScheduleTimingDetail scheduleTimingDetail) {
@@ -24,11 +24,16 @@ public class ScheduleTimingDao {
     }
 
 
-    public List<ScheduleTimingDetail> getScheduleDetail(String scheduleDate) {
+    public ScheduleTimingMaster getScheduleMasterId(String scheduleDate, String doctorId) {
+        return (ScheduleTimingMaster) entityManager.createQuery("from ScheduleTimingMaster where scheduleDate = :scheduleDate and doctorId =:doctorId")
+                .setParameter("scheduleDate", scheduleDate)
+                .setParameter("doctorId", doctorId)
+                .getSingleResult();
+     }
 
-        return entityManager.createQuery("from ScheduleTimingDetail where scheduleDate =:scheduleDate").
-                setParameter("scheduleDate", scheduleDate)
+    public List<ScheduleTimingDetail> getScheduleDetail(long scheduleMasterId) {
+        return entityManager.createQuery("from ScheduleTimingDetail where scheduleMasterId =:scheduleMasterId").
+                setParameter("scheduleMasterId", scheduleMasterId)
                 .getResultList();
     }
-
 }

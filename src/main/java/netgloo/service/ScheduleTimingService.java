@@ -5,6 +5,7 @@ import netgloo.helper.ResponseMessage;
 import netgloo.helper.SystemDataInt;
 import netgloo.models.ScheduleTimingDetail;
 import netgloo.models.ScheduleTimingMaster;
+import netgloo.models.User;
 import netgloo.repository.ScheduleTimingDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,6 @@ public class ScheduleTimingService {
     public ResponseMessage addSchedule(ScheduleTimingDetailDto scheduleTimingDetailDto) throws ParseException {
         ResponseMessage responseMessage = new ResponseMessage();
 
-
         ScheduleTimingMaster scheduleTimingMaster = new ScheduleTimingMaster();
         scheduleTimingMaster.setDoctorId("nzepa");
         scheduleTimingMaster.setScheduleDate(scheduleTimingDetailDto.getScheduleDate());
@@ -29,7 +29,8 @@ public class ScheduleTimingService {
         ScheduleTimingDetail scheduleTimingDetail = convertDetailDtoToEntity(scheduleTimingDetailDto);
 
         try {
-            scheduleTimingDao.addScheduleMaster(scheduleTimingMaster);
+            long scheduleMasterId = scheduleTimingDao.addScheduleMaster(scheduleTimingMaster);
+            scheduleTimingDetail.setScheduleMasterId(scheduleMasterId);
             scheduleTimingDao.addScheduleDetail(scheduleTimingDetail);
             responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());
             responseMessage.setText("Saved successfully.");
@@ -43,6 +44,7 @@ public class ScheduleTimingService {
 
     private ScheduleTimingDetail convertDetailDtoToEntity(ScheduleTimingDetailDto scheduleTimingDetailDto) {
         ScheduleTimingDetail scheduleTimingDetail = new ScheduleTimingDetail();
+        scheduleTimingDetail.setScheduleDate(scheduleTimingDetailDto.getScheduleDate());
         scheduleTimingDetail.setAvailableFrom(scheduleTimingDetailDto.getAvailableFrom());
         scheduleTimingDetail.setAvailableTo(scheduleTimingDetailDto.getAvailableTo());
         scheduleTimingDetail.setAppointmentStatus('A');
@@ -50,13 +52,16 @@ public class ScheduleTimingService {
         scheduleTimingDetail.setCreatedDate(new Date());
         scheduleTimingDetail.setUpdatedBy("Doctor");
         scheduleTimingDetail.setUpdatedDate(new Date());
-        scheduleTimingDetail.setScheduleDate(scheduleTimingDetailDto.getScheduleDate());
         return scheduleTimingDetail;
     }
 
-    public ResponseMessage getScheduleDetail(String date)  {
+    public ResponseMessage getScheduleDetail(String scheduleDate) {
         ResponseMessage responseMessage = new ResponseMessage();
-        List<ScheduleTimingDetail> timingDetailDtos = scheduleTimingDao.getScheduleDetail(date);
+        String doctorId = "nzepa";
+        ScheduleTimingMaster scheduleTimingMaster = scheduleTimingDao.getScheduleMasterId(scheduleDate, doctorId);
+        long scheduleMasterId = scheduleTimingMaster.getScheduleMasterId();
+
+        List<ScheduleTimingDetail> timingDetailDtos = scheduleTimingDao.getScheduleDetail(scheduleMasterId);
         if (timingDetailDtos != null) {
             responseMessage.setDTO(timingDetailDtos);
             responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());

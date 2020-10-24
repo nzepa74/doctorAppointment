@@ -29,7 +29,7 @@ public class ScheduleTimingController {
 
     @ResponseBody
     @RequestMapping(value = "/getScheduleDetail", method = RequestMethod.GET)
-    public ResponseMessage getScheduleDetail(String scheduleDate) throws ParseException {
+    public ResponseMessage getScheduleDetail(String scheduleDate) {
         return scheduleTimingService.getScheduleDetail(scheduleDate);
     }
 

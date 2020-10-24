@@ -1,8 +1,6 @@
 package netgloo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -10,15 +8,25 @@ import javax.validation.constraints.NotNull;
 public class ScheduleTimingMaster {
     //region private variables
     @Id
-//    @Column(name = "scheduleDate")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long scheduleMasterId;
+
+    @NotNull
     private String scheduleDate;
 
     @NotNull
-//    @Column(name = "doctorId")
     private String doctorId;
     //endregion
 
     //region setters and getters
+
+    public long getScheduleMasterId() {
+        return scheduleMasterId;
+    }
+
+    public void setScheduleMasterId(long scheduleMasterId) {
+        this.scheduleMasterId = scheduleMasterId;
+    }
 
     public String getScheduleDate() {
         return scheduleDate;
@@ -35,5 +43,6 @@ public class ScheduleTimingMaster {
     public void setDoctorId(String doctorId) {
         this.doctorId = doctorId;
     }
+
     //endregion
 }
