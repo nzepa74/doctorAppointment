@@ -5,7 +5,6 @@ import netgloo.helper.ResponseMessage;
 import netgloo.helper.SystemDataInt;
 import netgloo.models.ScheduleTimingDetail;
 import netgloo.models.ScheduleTimingMaster;
-import netgloo.models.User;
 import netgloo.repository.ScheduleTimingDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
