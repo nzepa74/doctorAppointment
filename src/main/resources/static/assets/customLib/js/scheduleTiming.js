@@ -40,7 +40,14 @@ user = (function () {
                         {
                             "data": "null", class: "align-middle",
                             "mRender": function () {
-                                return '<a href="#" id="btnView" class="btn btn-primary btn-sm ml-3 d-none d-sm-inline-block" data-toggle="modal" data-target="#add_time_slot">View</a>';
+                                return '<div class="actions">' +
+                                    '<a class="btn btn-sm bg-success-light" id="btnEdit" data-toggle="modal" href="#add_time_slot">' +
+                                    '<i class="fe fe-pencil"></i> Edit' +
+                                    '</a>' +
+                                    '<a data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">' +
+                                    '<i class="fe fe-trash"></i> Delete' +
+                                    '</a>' +
+                                    '</div>';
                             }
                         }
                     ];
@@ -60,8 +67,8 @@ user = (function () {
         });
     }
 
-    function btnView() {
-        $('#timeSlotTableId tbody').on('click', 'tr #btnView', function () {
+    function btnEdit() {
+        $('#timeSlotTableId tbody').on('click', 'tr #btnEdit', function () {
             let row = $(this).closest('tr');
             let selectedRow = row.addClass('selected');
             let scheduleDetailId = selectedRow.find('.scheduleDetailId').text();
@@ -119,7 +126,7 @@ user = (function () {
     return {
         getCurrentDate: getCurrentDate,
         getScheduleDetail: getScheduleDetail,
-        btnView: btnView,
+        btnEdit: btnEdit,
         addSchedule: addSchedule
     }
 })();
@@ -127,6 +134,6 @@ user = (function () {
 $(document).ready(function () {
     user.getCurrentDate();
     user.getScheduleDetail();
-    user.btnView();
+    user.btnEdit();
     user.addSchedule();
 });
