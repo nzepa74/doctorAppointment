@@ -8,11 +8,12 @@ user = (function () {
     }
 
     function getScheduleDetail() {
-        let scheduleDate = $('#scheduleDate').val();
+        $('#timeSlotTableId tbody').empty();
+        let scheduleDate = $('#masterDate').val();
         $.ajax({
             url: "/scheduleTiming/getScheduleDetail",
             type: "GET",
-            data: {scheduleDate: '24-Oct-2020'},
+            data: {scheduleDate: scheduleDate},
             success: function (res) {
                 if (res.status === 1) {
                     let columnDef = [
@@ -107,7 +108,16 @@ user = (function () {
         $('.field').val('');
     });
 
+    $('#masterDate').on('change', function () {
+        getScheduleDetail();
+    });
+
+    function getCurrentDate() {
+        $('#masterDate').val(formatAsDate(new Date()));
+    }
+
     return {
+        getCurrentDate: getCurrentDate,
         getScheduleDetail: getScheduleDetail,
         btnView: btnView,
         addSchedule: addSchedule
@@ -115,6 +125,7 @@ user = (function () {
 })();
 
 $(document).ready(function () {
+    user.getCurrentDate();
     user.getScheduleDetail();
     user.btnView();
     user.addSchedule();
