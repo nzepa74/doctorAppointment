@@ -61,7 +61,7 @@ user = (function () {
                         , paging: false
                     });
                 } else {
-                    alert(res.text);
+                    // alert(res.text);
                 }
             }
         });

@@ -1,6 +1,7 @@
 package netgloo.service;
 
 import netgloo.dto.ScheduleTimingDetailDto;
+import netgloo.dto.ScheduleTimingMasterDto;
 import netgloo.helper.ResponseMessage;
 import netgloo.helper.SystemDataInt;
 import netgloo.models.ScheduleTimingDetail;
@@ -22,11 +23,12 @@ public class ScheduleTimingService {
 
     public ResponseMessage addSchedule(ScheduleTimingDetailDto scheduleTimingDetailDto) {
         ResponseMessage responseMessage = new ResponseMessage();
-        ScheduleTimingMaster scheduleTimingMasterDb = scheduleTimingDao.getScheduleMasterId(
+        ScheduleTimingMasterDto scheduleTimingMasterDto = scheduleTimingDao.getScheduleMasterId(
                 scheduleTimingDetailDto.getScheduleDate(), doctorId);
-
-        BigInteger scheduleTimingMasterId = scheduleTimingMasterDb.getScheduleMasterId();
-        scheduleTimingMasterId = scheduleTimingMasterId == null ? scheduleTimingDetailDto.getScheduleMasterId() : scheduleTimingMasterId;
+        BigInteger scheduleTimingMasterId = null;
+        if (scheduleTimingMasterDto != null) {
+            scheduleTimingMasterId = scheduleTimingMasterDto.getScheduleMasterId();
+        }
 
         ScheduleTimingMaster scheduleTimingMaster = new ScheduleTimingMaster();
         scheduleTimingMaster.setScheduleMasterId(scheduleTimingMasterId);
@@ -74,10 +76,9 @@ public class ScheduleTimingService {
 
     public ResponseMessage getScheduleDetail(String scheduleDate) {
         ResponseMessage responseMessage = new ResponseMessage();
-        ScheduleTimingMaster scheduleTimingMaster = scheduleTimingDao.getScheduleMasterId(scheduleDate, doctorId);
-        BigInteger scheduleMasterId = scheduleTimingMaster.getScheduleMasterId();
+        ScheduleTimingMasterDto scheduleTimingMasterDto = scheduleTimingDao.getScheduleMasterId(scheduleDate, doctorId);
 
-        List<ScheduleTimingDetail> timingDetailDtos = scheduleTimingDao.getScheduleDetail(scheduleMasterId);
+        List<ScheduleTimingDetail> timingDetailDtos = scheduleTimingDao.getScheduleDetail(scheduleTimingMasterDto.getScheduleMasterId());
         if (timingDetailDtos != null) {
             responseMessage.setDTO(timingDetailDtos);
             responseMessage.setStatus(SystemDataInt.MESSAGE_STATUS_SUCCESSFUL.value());
