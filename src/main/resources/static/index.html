@@ -3,132 +3,192 @@
 <title>Home</title>
 
 <head>
-  <link rel="icon" href="boostrap/images/dc.png" type="image/gif" sizes="16x16">
+  <meta charset="utf-8">
+  <title>Doccure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-  <!--    <script type="text/javascript" src="../boostrap/jQuery/jquery.min.js"></script>-->
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+  <!-- Select2 CSS -->
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/customStyle.css">
+  <link rel="stylesheet" href="assets/datepicker/css/datepicker.css">
+  <link rel="stylesheet" href="assets/sweetalert/sweetalert2.css">
+  <link rel="stylesheet" href="assets/dataTable/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="assets/dataTable/css/editor.dataTables.min.css">
+  <link rel="stylesheet" href="assets/dataTable/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="assets/dataTable/css/select.dataTables.min.css">
+
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery.min.js"></script>
   <script src="jquery.serialize-object.min.js"></script>
+  <!-- Bootstrap Core JS -->
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 
-  <script src="boostrap/dist/libs/peity/jquery.peity.min.js"></script>
-  <script src="boostrap/dist/libs/peity/jquery.peity.min.js"></script>
-  <script src="boostrap/dist/js/tabler.min.js"></script>
+  <!-- Sticky Sidebar JS -->
+  <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+  <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
 
-  <script src="boostrap/plugins/select2/js/select2.full.min.js"></script>
-  <script src="boostrap/lib/js/alertify.new.min.js"></script>
-  <script src="boostrap/lib/js/nprogress.js"></script>
-  <script src="boostrap/lib/js/jquery.blockUI.js"></script>
-  <script src="boostrap/lib/js/datepicker.min.js"></script>
+  <!-- Select2 JS -->
+  <script src="assets/plugins/select2/js/select2.min.js"></script>
 
-  <script src="boostrap/lib/customLib/global_lib.js"></script>
-  <script src="boostrap/lib/customLib/globalConf.js"></script>
-  <script src="boostrap/lib/customLib/script-loader.js"></script>
-  <script src="boostrap/dist/js/jquery.validate.min.js"></script>
-  <script type="text/javascript" data-pace-options='{"ajax":false,"document":false,"eventLag":false}'
-          src="boostrap/lib/js/pace.min.js"></script>
-  <script src="boostrap/plugins/sweetalert2/sweetalert.min.js"></script>
-  <script src="boostrap/dataTable/js/jquery.dataTables.min.js"></script>
-  <script src="boostrap/dataTable/js/dataTables.select.min.js"></script>
-  <script src="boostrap/dataTable/js/dataTables.buttons.min.js"></script>
-  <script src="boostrap/dataTable/js/jszip.min.js"></script>
-  <script src="boostrap/dataTable/js/pdfmake.min.js"></script>
-  <script src="boostrap/dataTable/js/vfs_fonts.js"></script>
-  <script src="boostrap/dataTable/js/buttons.html5.min.js"></script>
-  <script src="boostrap/dataTable/js/buttons.print.min.js"></script>
-  <script src="boostrap/dist/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
 
+  <script src="assets/sweetalert/sweetalert.min.js"></script>
+  <script src="assets/customLib/script-loader.js"></script>
+  <script src="assets/customLib/global_lib.js"></script>
+  <script src="assets/customLib/globalConf.js"></script>
 
-  <link rel="stylesheet" href="boostrap/plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="boostrap/plugins/sweetalert2/sweetalert.css">
-  <link rel="stylesheet" href="boostrap/dist/libs/jqvmap/dist/jqvmap.min.css">
-  <link rel="stylesheet" href="boostrap/dist/css/tabler.min.css">
-  <link rel="stylesheet" href="boostrap/dist/css/demo.min.css">
-  <link rel="stylesheet" href="boostrap/dist/font-awesome/4.2.0/css/font-awesome.min.css">
+  <script src="assets/datepicker/js/datepicker.min.js"></script>
+  <script src="assets/customLib/nprogress.js"></script>
+  <script src="assets/customLib/jquery.blockUI.js"></script>
+  <script src="assets/dataTable/js/jquery.dataTables.min.js"></script>
 
-  <link rel="stylesheet" href="boostrap/dataTable/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="boostrap/dataTable/css/editor.dataTables.min.css">
-  <link rel="stylesheet" href="boostrap/dataTable/css/select.dataTables.min.css">
-  <link rel="stylesheet" href="boostrap/dataTable/css/buttons.dataTables.min.css">
-
-  <link rel="stylesheet" href="boostrap/lib/css/datepicker.css">
-  <link rel="stylesheet" href="boostrap/lib/css/nprogress.css">
-  <link rel="stylesheet" href="boostrap/dist/css/pace.css">
-  <link rel="stylesheet" href="boostrap/dist/css/customStyle.css">
 </head>
 
 <body>
-<header class="navbar navbar-expand-md navbar-light">
-  <div class="container-xl">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a href="." class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pr-0 pr-md-3">
-      <img src="boostrap/images/dc.png" alt="Tabler" class="navbar-brand-image">
-
-      <h3 class="organization-name mt-4 ml-3 text-nowrap">Doctor Appointment</h3>
-    </a>
-
-    <div class="navbar-nav flex-row order-md-last">
-      <div class="nav-item dropdown d-none d-md-flex mr-3">
-        <a href="#" class="nav-link px-0" data-toggle="dropdown" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-               stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-               stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z"/>
-            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"/>
-            <path d="M9 17v1a3 3 0 0 0 6 0v-1"/>
-          </svg>
-          <span class="badge bg-red"></span>
+<header class="header">
+  <nav class="navbar navbar-expand-lg header-nav">
+    <div class="navbar-header">
+      <a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+      </a>
+      <a href="index-2.html" class="navbar-brand logo">
+        <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+      </a>
+    </div>
+    <div class="main-menu-wrapper">
+      <div class="menu-header">
+        <a href="index-2.html" class="menu-logo">
+          <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
         </a>
+        <a id="menu_close" class="menu-close" href="javascript:void(0);">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+      <ul class="main-nav">
+        <li>
+          <a href="index-2.html">Home</a>
+        </li>
+        <li class="has-submenu active">
+          <a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="doctor-dashboard.html">Doctor Dashboard</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li class="active"><a href="schedule-timings.html">Schedule Timing</a></li>
+            <li><a href="my-patients.html">Patients List</a></li>
+            <li><a href="patient-profile.html">Patients Profile</a></li>
+            <li><a href="chat-doctor.html">Chat</a></li>
+            <li><a href="invoices.html">Invoices</a></li>
+            <li><a href="doctor-profile-settings.html">Profile Settings</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="doctor-register.html">Doctor Register</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Patients <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="search.html">Search Doctor</a></li>
+            <li><a href="doctor-profile.html">Doctor Profile</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="booking-success.html">Booking Success</a></li>
+            <li><a href="patient-dashboard.html">Patient Dashboard</a></li>
+            <li><a href="favourites.html">Favourites</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="profile-settings.html">Profile Settings</a></li>
+            <li><a href="change-password.html">Change Password</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Pages <i class="fas fa-chevron-down"></i></a>
+          <ul class="submenu">
+            <li><a href="voice-call.html">Voice Call</a></li>
+            <li><a href="video-call.html">Video Call</a></li>
+            <li><a href="search.html">Search Doctors</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li class="has-submenu">
+              <a href="invoices.html">Invoices</a>
+              <ul class="submenu">
+                <li><a href="invoices.html">Invoices</a></li>
+                <li><a href="invoice-view.html">Invoice View</a></li>
+              </ul>
+            </li>
+            <li><a href="blank-page.html">Starter Page</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="forgot-password.html">Forgot Password</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="admin/index.html" target="_blank">Admin</a>
+        </li>
+        <li class="login-link">
+          <a href="login.html">Login / Signup</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="nav header-navbar-rht">
+      <li class="nav-item contact-item">
+        <div class="header-contact-img">
+          <i class="far fa-hospital"></i>
+        </div>
+        <div class="header-contact-detail">
+          <p class="contact-header">Contact</p>
+          <p class="contact-info-header"> +1 315 369 5943</p>
+        </div>
+      </li>
 
-        <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
-          <div class="card">
-            <div class="card-body">
-              Your appointment is approved
+      <!-- User Menu -->
+      <li class="nav-item dropdown has-arrow logged-item">
+        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+								<span class="user-img">
+									<img class="rounded-circle" src="assets/img/doctors/doctor-thumb-02.jpg" width="31"
+                                         alt="Darren Elder">
+								</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="user-header">
+            <div class="avatar avatar-sm">
+              <img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image"
+                   class="avatar-img rounded-circle">
+            </div>
+            <div class="user-text">
+              <h6>Darren Elder</h6>
+              <p class="text-muted mb-0">Doctor</p>
             </div>
           </div>
+          <a class="dropdown-item" href="doctor-dashboard.html">Dashboard</a>
+          <a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>
+          <a class="dropdown-item" href="login.html">Logout</a>
         </div>
-      </div>
-      <div class="nav-item dropdown">
-        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-toggle="dropdown">
-          <span class="avatar" style="background-image: url(boostrap/images/user.png)"></span>
+      </li>
+      <!-- /User Menu -->
 
-          <div class="d-none d-xl-block pl-2">
-            <div>Ngawang Zepa</div>
-            <div class="mt-1 small text-muted">Thimphu TechPark Ltd</div>
-          </div>
-
-        </a>
-
-        <div class="dropdown-menu dropdown-menu-right">
-
-          <a class="dropdown-item" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon dropdown-item-icon" width="24" height="24"
-                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"/>
-              <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"/>
-              <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"/>
-              <line x1="16" y1="5" x2="19" y2="8"/>
-            </svg>
-            Change Password
-          </a>
-
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="javascript:$('#logoutForm').submit();">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24" height="24"
-                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z"></path>
-              <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
-              <path d="M7 12h14l-3 -3m0 6l3 -3"></path>
-            </svg>
-            Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    </ul>
+  </nav>
 </header>
-<div class="page" style="background-image: url(boostrap/images/dc.png)">
+
+<div class="page" style="background-image: url(assets/img/dc.png)">
 
     <span style="text-align: center; vertical-align: middle; margin-top: 200px; font-size: 45px">
         11,000s Doctor Appointment System</span>
@@ -136,25 +196,7 @@
         <a href="/register" class="link-secondary" style="font-size:30px;color: #0d8ddc;">
             Click here to register</a></span>
 </div>
-<footer class="footer">
-  <div class="container">
-    <div class="row align-items-center flex-row-reverse">
-      <div class="col-auto ml-lg-auto">
-        <div class="row align-items-center">
-          <div class="col-auto">
-            <ul class="list-inline list-inline-dots mb-0">
-              <li class="list-inline-item">System developed and maintained by <a href="/">11,000s
-                Doctor</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-        Copyright © 2020 <a href=".">11,000s.</a> All rights reserved.
-      </div>
-    </div>
-  </div>
-</footer>
+
 </body>
 </html>
 

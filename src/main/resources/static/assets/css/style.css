@@ -6734,3 +6734,9 @@ html.menu-opened body {
 		margin-bottom: 10px;
 	}
 }
+.page {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	min-height: 100vh
+}
